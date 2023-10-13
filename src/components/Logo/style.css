@@ -1,0 +1,13 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');
+.Logo h1{
+    font-family: 'Pixelify Sans';
+    font-size: 3rem;
+}
+
+.Logo p{
+    font-family: 'Pixelify Sans';
+
+    font-size: 2rem;
+    color: gray;
+}

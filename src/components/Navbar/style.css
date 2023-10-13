@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap');
+* {
+    margin: 0;
+    padding: 0px;
+    border: 0px;
+    font-family: Outfit;
+    font-weight: 500;
+}
+a {
+    text-decoration: none;
+    font-size: 1.5em;
+    color: black
+}
+
+.Navbar {
+    background-color: rgb(222,184,135);
+    box-shadow: 0px 5px 5px gray;
+    height: 5rem;
+    width: 100vw;
+    justify-content: center;
+    display: flex;
+}
+.Navbar-List {
+    padding: 5px;
+    display: flex;
+    border: 1px solid;
+    justify-content: space-around;
+    align-items: center;
+    display: flex;
+    list-style-type: none;
+    width: 100%;
+}
+.Navbar-List li {
+    padding: 0% 2%;
+    transition: background-color 0.3s ease;
+}
+.Navbar-List li:hover {
+    background-color: rgba(255, 255, 255, 0);
+    box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.5);
+    backdrop-filter: none;
+    cursor: pointer;
+}

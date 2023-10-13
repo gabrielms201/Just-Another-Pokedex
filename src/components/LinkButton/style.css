@@ -1,0 +1,6 @@
+.LinkButton {
+    margin: 2%;
+    background-color: rgb(246, 211, 87);
+    border-radius: 16px;
+    box-shadow: 1px 1px 5px black;
+}
