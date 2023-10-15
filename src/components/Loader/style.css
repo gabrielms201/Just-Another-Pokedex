@@ -1,0 +1,38 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');
+.Loader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    
+}
+
+.loading {
+    font-family: 'Pixelify Sans';
+    font-size: 3rem;
+}
+
+.pokeball {
+    width: 10rem;
+    height: 10rem;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.dots {
+    font-size: 3rem;
+    font-family: 'Pixelify Sans';
+    animation: dot-animation 3s infinite steps(3);
+}
+
+@keyframes dot-animation {
+    0% { content: "."; color: white;}
+    33% { content: '..'; color: gray;}
+    100% { content: '...'; color: black;}
+}

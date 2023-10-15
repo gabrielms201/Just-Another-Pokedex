@@ -1,12 +1,11 @@
 import './style.css'
 
-export default function SearchButton({imageContent, searchContent, ref}) {    
-    const searchURL = `./${searchContent}`;
+export default function SearchButton({imageContent, searchContent, handleClick}) {
     return (
         <div className="SearchButton">
-            <a href={searchURL} ref={ref}>
+            <button onClick={handleClick}>
                 <img src={imageContent}/>
-            </a>
+            </button>
         </div>
     )
 }

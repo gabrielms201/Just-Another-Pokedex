@@ -14,8 +14,8 @@ a {
 
 .Navbar {
     background-color: rgb(222,184,135);
-    box-shadow: 0px 5px 5px gray;
-    height: 5rem;
+    box-shadow: 0px 5px 5px rgba(128, 128, 128, 0.25);
+    height: 5%;
     width: 100vw;
     justify-content: center;
     display: flex;
@@ -39,4 +39,11 @@ a {
     box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.5);
     backdrop-filter: none;
     cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .Navbar{
+        bottom: 0;
+        position: absolute;
+    }
 }

@@ -1,33 +1,54 @@
 import './style.css'
 import SearchButton from '../SearchButton/SearchButton';
 import searchImage from '../../assets/Search.png'
-import React, { useState, useRef } from 'react';
+import { useState } from 'react';
+import Alert from '../Alert/Alert';
+
 import { useNavigate } from 'react-router-dom';
 
 
 
 export default function SearchBar() {
-    const [searchContent, setSearchContent] = useState("");
+    const [invalid, setInvalid] = useState(false)
+    const [searchContent, setSearchContent] = useState(null);
+
+    function isNullOrEmpty(str) {
+        return str == null || str.trim() === "";
+    }
+
     const navigate = useNavigate();
     const handleInputChange = (event) => {setSearchContent(event.target.value)}
     
-    const handleKeyPress = (event) => {
+    const jumpToPokemonPage = () => {
+        if (!isNullOrEmpty(searchContent))
+            navigate(`./pokemon/${searchContent}`);
+        else {
+            setInvalid(true);
+        }
+    }
+
+    const searchPokemon = (event) => {
         if (event.key === 'Enter') {
-            navigate(`./${searchContent}`);
+            jumpToPokemonPage();
         }
       };
 
     return (
-            <div className="SearchBar">
+        <>
+          <div className="SearchBar">
                 <input 
                     type="search"
                     id="search"
                     name="search"
-                    placeholder="Type a Pokémon"
+                    placeholder= {invalid ? "Please, type a Pokémon to continue" : "Type a Pokémon"} 
                     autoComplete='off'
                     onChange={handleInputChange}
-                    onKeyDown={handleKeyPress} />
-                <SearchButton imageContent={searchImage} searchContent={searchContent}/>
+                    onKeyDown={searchPokemon} />
+                <SearchButton imageContent={searchImage} searchContent={searchContent} handleClick={jumpToPokemonPage}/>
             </div>
+
+            {invalid && <Alert text="Please type the Pokémon you want before searching"></Alert>}
+        </>
+          
     )
 }
